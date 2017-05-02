@@ -53,7 +53,7 @@ class Craps:
         if strategy:
             i = 0
             while self.mym > 0 and i < games:
-                s.strategy(self)
+                strategy.strategy(self)
                 self.cycle()
                 if not self.on:
                     i += 1
@@ -86,7 +86,7 @@ class Strategy:
                 if k not in ['pass', 'notpass']:
                     doBet(k, v)
 
-random.seed(12)
+random.seed(13)
 N = 1000
 startWith = 200
 
@@ -124,3 +124,4 @@ def testStrategy():
         totalWin += win * sum
     print 'Started with:', startWith, 'Won games:', float(totalWinN) / N, 'Average Earn:', totalWin / totalWinN - startWith
 
+testStrategy()
